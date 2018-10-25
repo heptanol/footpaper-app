@@ -7,12 +7,12 @@
        [active]="result.isActive">
       {{'result.label' }}
     </a>
-    <!--<a mat-tab-link-->
-       <!--[routerLink]="['./standing']"-->
-       <!--routerLinkActive #standing="routerLinkActive"-->
-       <!--[active]="standing.isActive">-->
-      <!--{{'table.label' | translate}}-->
-    <!--</a>-->
+    <a mat-tab-link
+       [routerLink]="['./standing']"
+       routerLinkActive #standing="routerLinkActive"
+       [active]="standing.isActive">
+      {{'table.label'}}
+    </a>
     <!--<a mat-tab-link-->
        <!--[routerLink]="['./scorers']"-->
        <!--routerLinkActive #scorers="routerLinkActive"-->

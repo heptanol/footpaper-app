@@ -1,0 +1,13 @@
+<div class="table-item header">
+  <div class="tab-header position">{{'table.ranking' }}</div>
+  <div class="tab-header phone-no-display"  ></div>
+  <div class="tab-header team" >{{'table.team' }}</div>
+  <div class="tab-header"  >{{'table.played' }}</div>
+  <div class="tab-header phone-no-display"  >{{'table.win' }}</div>
+  <div class="tab-header phone-no-display"  >{{'table.draw' }}</div>
+  <div class="tab-header phone-no-display"  >{{'table.lost' }}</div>
+  <div class="tab-header"  >{{'table.diff' }}</div>
+  <div class="tab-header"  >{{'table.points' }}</div>
+</div>
+<app-table-team *ngFor="let table of tables; let odd=odd;" [teamTable]="table" [class.odd]="odd"></app-table-team>
+

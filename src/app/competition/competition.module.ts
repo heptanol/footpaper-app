@@ -8,6 +8,9 @@ import {CommonModule} from '@angular/common';
 import {MatGridListModule, MatIconModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 import {FixtureComponent} from './fixture/fixture.component';
 import {FixtureMinComponent} from './fixture/fixture-min/fixture-min.component';
+import {TableTeamComponent} from './table-team/table-team.component';
+import {MinTableTeamComponent} from './table-team/min-table-team/min-table-team.component';
+import {TableComponent} from './leagues/table/table.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import {FixtureMinComponent} from './fixture/fixture-min/fixture-min.component';
     LeaguesComponent,
     ResultComponent,
     FixtureComponent,
-    FixtureMinComponent
+    FixtureMinComponent,
+    TableTeamComponent,
+    MinTableTeamComponent,
+    TableComponent
   ],
   imports: [
     RouterModule,

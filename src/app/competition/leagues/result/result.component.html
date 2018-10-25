@@ -1,0 +1,26 @@
+<mat-toolbar class="match-day">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="getData(competition.competition.id, matchDay - 1)"  *ngIf="matchDay !== 1">
+      <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
+    </button>
+    <span>{{'result.matchDay' }} {{matchDay}}</span>
+    <button mat-icon-button (click)="getData(competition.competition.id, matchDay + 1)" *ngIf="matchDay !== totalMatchDay">
+      <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_right</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div *ngIf="fixtures" role="list">
+  <div *ngFor="let fixture of fixtures |  groupBy:'day'" role="listitem" class="border mt-3 mb-3">
+    <mat-toolbar class="day">
+      <mat-toolbar-row>
+        {{fixture.key  | date: 'EEEE dd/MM/yyyy'}}
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <ng-container *ngIf="device === deviceList.DESKTOP">
+      <app-fixture *ngFor="let fix of fixture.value; let odd=odd;" [fixture]="fix" [competition]="competition.competition" [class.odd]="odd"></app-fixture>
+    </ng-container>
+    <ng-container *ngIf="device !== deviceList.DESKTOP">
+      <app-fixture-min *ngFor="let fix of fixture.value; let odd=odd;" [fixture]="fix" [competition]="competition.competition" [class.odd]="odd"></app-fixture-min>
+    </ng-container>
+  </div>
+</div>

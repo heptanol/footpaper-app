@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 import { MenuComponent } from './nav-menu/menu/menu.component';
 import { RouterModule } from '@angular/router';
 import {FooterComponent} from './footer/footer.component';
+import {TeamSvgDefinitionsComponent} from './team-logo/svg-definitions/svg-definitions.component';
+import {TeamSvgIconComponent} from './team-logo/svg-icon/svg-icon.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import {FooterComponent} from './footer/footer.component';
     OrderByPipe,
     IconComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    TeamSvgDefinitionsComponent,
+    TeamSvgIconComponent
   ],
   imports: [
     MatButtonModule,
@@ -30,7 +34,9 @@ import {FooterComponent} from './footer/footer.component';
     GroupByPipe,
     OrderByPipe,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    TeamSvgDefinitionsComponent,
+    TeamSvgIconComponent
   ],
   providers: [
     CustomTranslateService,

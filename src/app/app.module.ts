@@ -13,6 +13,7 @@ import {MatGridListModule, MatSidenavModule} from '@angular/material';
 import {CommonModule} from '@angular/common';
 import {SharedModule} from './shared/shared.module';
 import {HomeComponent} from './home/home.component';
+import {CompetitionModule} from './competition/competition.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -31,6 +32,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     BrowserTransferStateModule,
     CommonModule,
+    CompetitionModule,
     HttpClientModule,
     MatSidenavModule,
     MatGridListModule,

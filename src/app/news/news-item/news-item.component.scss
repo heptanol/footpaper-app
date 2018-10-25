@@ -1,0 +1,29 @@
+@import '~@angular/material/theming';
+.example-card {
+  width: 100%;
+  float: left;
+  margin: 1%;
+  padding: 0;
+  .image-wrap {
+    width: 100%;
+    overflow: hidden;
+    img{
+      margin: 0;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+  }
+  mat-card-header{}
+  mat-card-header {
+    padding: 10px;
+  }
+  .source{}
+}
+.example-card:hover {
+  .image-wrap {
+    img {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+    }
+  }
+}

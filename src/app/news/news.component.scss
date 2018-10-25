@@ -1,0 +1,30 @@
+@import '~@angular/material/theming';
+.mat-list .mat-list-item{
+  height: auto;
+  margin: 10px 15px;
+}
+.mat-list .mat-list-item h3{
+  font-size: 20px;
+}
+.mat-list .mat-list-item p{
+  font-size: 14px;
+}
+.mat-list .mat-list-item span.mat-line{
+  font-size: 14px;
+  height: 32px;
+  vertical-align: middle;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: pre-wrap;
+}
+.mat-list .mat-list-item .mat-list-avatar{
+  width: 100px;
+  height: auto;
+  border-radius: 0;
+}
+.mat-progress-spinner circle{
+  stroke: #111111!important;
+}

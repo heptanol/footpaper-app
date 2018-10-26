@@ -13,12 +13,12 @@
        [active]="standing.isActive">
       {{'table.label'}}
     </a>
-    <!--<a mat-tab-link-->
-       <!--[routerLink]="['./scorers']"-->
-       <!--routerLinkActive #scorers="routerLinkActive"-->
-       <!--[active]="scorers.isActive">-->
-      <!--{{'scorers.label' | translate}}-->
-    <!--</a>-->
+    <a mat-tab-link
+       [routerLink]="['./scorers']"
+       routerLinkActive #scorers="routerLinkActive"
+       [active]="scorers.isActive">
+      {{'scorers.label'}}
+    </a>
   </nav>
 <router-outlet *ngIf="competition"></router-outlet>
 </ng-container>

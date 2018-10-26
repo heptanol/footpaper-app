@@ -11,6 +11,7 @@ import {FixtureMinComponent} from './fixture/fixture-min/fixture-min.component';
 import {TableTeamComponent} from './table-team/table-team.component';
 import {MinTableTeamComponent} from './table-team/min-table-team/min-table-team.component';
 import {TableComponent} from './leagues/table/table.component';
+import {ScorersComponent} from './leagues/scorers/scorers.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {TableComponent} from './leagues/table/table.component';
     FixtureMinComponent,
     TableTeamComponent,
     MinTableTeamComponent,
-    TableComponent
+    TableComponent,
+    ScorersComponent
   ],
   imports: [
     RouterModule,

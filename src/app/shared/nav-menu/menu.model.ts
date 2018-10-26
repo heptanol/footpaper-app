@@ -1,3 +1,6 @@
+import {StageType} from '../../competition/fixture/match.model';
+import {CompetitionConfig} from '../../competition/competition.model';
+
 export const Leagues = {
   LIGA : {
     id: '2014',
@@ -43,4 +46,29 @@ export const Leagues = {
   },
 };
 
-export const Cups = {};
+export const Cups = {
+  UEFA_CHAMPIONS_LEAGUE: <CompetitionConfig>{
+    path: 'champions-league',
+    id: '2001',
+    name: 'UEFA champions league',
+    country: 'europe',
+    availableStage: [
+      StageType.ROUND_OF_16,
+      StageType.QUARTER_FINALS,
+      StageType.SEMI_FINALS,
+      StageType.FINAL
+    ]
+  },
+  // WORLD_CUP: <CompetitionConfig>{
+  //   path: 'world-cup',
+  //   id: 'WC',
+  //   name: 'FIFA World Cup',
+  //   country: 'world',
+  //   availableStage: [
+  //     StageType.ROUND_OF_16,
+  //     StageType.QUARTER_FINALS,
+  //     StageType.SEMI_FINALS,
+  //     StageType.FINAL
+  //   ]
+  // }
+};

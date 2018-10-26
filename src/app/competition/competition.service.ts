@@ -2,12 +2,15 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {environment} from '../../environments/environment';
+import {CompetitionConfig, CompetitionResponse} from './competition.model';
 
 
 @Injectable()
 export class CompetitionService {
 
-  private _competition: any;
+  private _competition: CompetitionResponse;
+  private _competitionConfig: CompetitionConfig;
+
   apiUrl = environment.apiUrl;
   constructor(
     private http: HttpClient
@@ -43,5 +46,13 @@ export class CompetitionService {
 
   getCompetition(): any {
     return this._competition;
+  }
+
+  getCompetitionConfig(): CompetitionConfig {
+    return this._competitionConfig;
+  }
+
+  setCompetitionConfig(value: CompetitionConfig) {
+    this._competitionConfig = value;
   }
 }

@@ -15,6 +15,9 @@ import {ScorersComponent} from './leagues/scorers/scorers.component';
 import {EventIconComponent} from './fixture/event-icon/event-icon.component';
 import {FixtureDetailsComponent} from './fixture/fixture-details/fixture-details.component';
 import {MinTableComponent} from './min-table/min-table.component';
+import {CupsComponent} from './cups/cups.component';
+import {TableClComponent} from './cups/table/table.component';
+import {ResultClComponent} from './cups/result/result.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import {MinTableComponent} from './min-table/min-table.component';
     ScorersComponent,
     EventIconComponent,
     MinTableComponent,
-    FixtureDetailsComponent
+    FixtureDetailsComponent,
+    CupsComponent,
+    TableClComponent,
+    ResultClComponent
   ],
   imports: [
     RouterModule,

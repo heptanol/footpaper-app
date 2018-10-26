@@ -40,3 +40,12 @@ export interface ScorerTable {
   team: Team;
   numberOfGoals: number;
 }
+
+
+export interface CompetitionConfig {
+  path: string;
+  id: string;
+  name: string;
+  country: string;
+  availableStage?: any[];
+}

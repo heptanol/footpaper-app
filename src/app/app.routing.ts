@@ -5,6 +5,7 @@ import {LeaguesComponent} from './competition/leagues/leagues.component';
 import {ResultComponent} from './competition/leagues/result/result.component';
 import {TableComponent} from './competition/leagues/table/table.component';
 import {ScorersComponent} from './competition/leagues/scorers/scorers.component';
+import {FixtureDetailsComponent} from './competition/fixture/fixture-details/fixture-details.component';
 
 const APP_ROUTES: Routes = [
   {path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const APP_ROUTES: Routes = [
       {path: 'scorers', component: ScorersComponent}
     ]
   },
+  {path: 'match/:leaguePath/:matchId', component: FixtureDetailsComponent},
   { path: '**', redirectTo: '' }
 ];
 

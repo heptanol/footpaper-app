@@ -1,0 +1,181 @@
+@import '~@angular/material/theming';
+.fixture{
+  display: flex;
+  justify-content: center;
+  background: mat-color($mat-grey, 300);
+  position: relative;
+  font-size: 1.8em;
+  @media screen and (max-width: 840px) {
+    font-size: 1.4em;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 1em;
+  }
+  .scorers{
+    font-size: 0.4em;
+    @media screen and (max-width: 840px) {
+      font-size: 0.7em;
+    }
+    text-align: left;
+    margin: 10px;
+    span{
+      display: block;
+      float: left;
+      margin: 0 5px;
+    }
+  }
+  .date{
+    font-size: 0.5em;
+    @media screen and (max-width: 840px) {
+      font-size: 0.7em;
+    }
+    position: absolute;
+    bottom: 10px;
+  }
+  .team{
+    padding: 20px 0;
+    flex: 7;
+    text-align: center;
+  }
+  .status-container {
+    font-size: 0.5em;
+    @media screen and (max-width: 840px) {
+      font-size: 0.7em;
+    }
+    position: absolute;
+    top: 0;
+  }
+  .result{
+    margin: 40px 0;
+    flex: 3;
+    text-align: center;
+    letter-spacing: 5px;
+    }
+  .regular {
+    font-size: 2.5em;
+    @media screen and (max-width: 840px) {
+      font-size: 2em;
+    }
+  }
+  .extra, .peno {
+    color: mat-color($mat-grey, 500);
+    font-size: 0.5em;
+  }
+  .status{
+    padding: 5px 15px;
+    color: mat-color($mat-grey, 50);
+    background: mat-color($mat-grey, 800);
+    text-align: center;
+  }
+  .finished{
+    background: mat-color($mat-grey, 900);
+  }
+  .in-play{
+    background: mat-color($mat-red, 300);
+  }
+  .rep{
+    background: mat-color($mat-grey, 500);
+  }
+}
+.fixture-details {
+
+}
+.winner{
+  font-weight: bold;
+}
+.logo svg {
+  max-width: none;
+  max-height: none;
+  width: 100px;
+}
+.event-content {
+  .event{
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid mat-color($mat-gray, 300);
+    span{
+      flex: 7;
+      display: block;
+    }
+    span.event-type{
+      flex: 2;
+      text-align: center;
+    }
+  }
+  .minute{
+    color: mat-color($mat-grey, 500);
+    font-size: 0.8em;
+  }
+  .home-event{
+    flex-direction: row;
+    .event-details{
+      text-align: right;
+    }
+  }
+  .away-event{
+    flex-direction: row-reverse;
+    .event-details{
+      text-align: left;
+    }
+  }
+}
+.lineups-content,
+.details-content{
+  display: flex;
+  justify-content: center;
+  h5{
+    margin-bottom: 0;
+    background: mat-color($mat-grey, 300);
+    padding: 10px;
+    border-bottom: none;
+  }
+  .lineup, .details{
+    h5{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+  .home-details, .away-details{
+    flex: 7;
+  }
+  .separator{
+    flex: 2;
+  }
+  .home-lineups{
+    flex: 2;
+    margin-right: 20px;
+  }
+  .away-lineups{
+    flex: 2;
+  }
+  .player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    &.odd{
+      background-color: mat-color($mat-gray, 100);
+    }
+    .position{
+      flex: 1;
+      padding: 2px;
+      color: mat-color($mat-grey, 50);
+      background: mat-color($mat-grey, 800);
+      text-align: center;
+    }
+    .shirt-number{
+      flex: 1;
+      text-align: center;
+    }
+    .name{
+      flex: 8;
+    }
+  }
+}
+.mdc-layout-grid {
+  padding: 0;
+}

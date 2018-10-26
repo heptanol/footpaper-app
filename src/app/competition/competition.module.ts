@@ -12,6 +12,9 @@ import {TableTeamComponent} from './table-team/table-team.component';
 import {MinTableTeamComponent} from './table-team/min-table-team/min-table-team.component';
 import {TableComponent} from './leagues/table/table.component';
 import {ScorersComponent} from './leagues/scorers/scorers.component';
+import {EventIconComponent} from './fixture/event-icon/event-icon.component';
+import {FixtureDetailsComponent} from './fixture/fixture-details/fixture-details.component';
+import {MinTableComponent} from './min-table/min-table.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import {ScorersComponent} from './leagues/scorers/scorers.component';
     TableTeamComponent,
     MinTableTeamComponent,
     TableComponent,
-    ScorersComponent
+    ScorersComponent,
+    EventIconComponent,
+    MinTableComponent,
+    FixtureDetailsComponent
   ],
   imports: [
     RouterModule,

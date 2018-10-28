@@ -9,10 +9,12 @@ import {FixtureDetailsComponent} from './competition/fixture/fixture-details/fix
 import {TableClComponent} from './competition/cups/table/table.component';
 import {ResultClComponent} from './competition/cups/result/result.component';
 import {CupsComponent} from './competition/cups/cups.component';
+import {TodayComponent} from './competition/today/today.component';
 
 const APP_ROUTES: Routes = [
   {path: '', component: HomeComponent},
   {path: 'news', component: NewsComponent},
+  {path: 'today', component: TodayComponent},
   {path: 'league/:leaguePath', component: LeaguesComponent, children: [
       {path: 'result', component: ResultComponent},
       {path: 'standing', component: TableComponent},

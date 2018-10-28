@@ -15,7 +15,7 @@ export class ResultComponent implements OnInit, OnDestroy {
   matchDay: number;
   totalMatchDay: number;
   fixtures: any[];
-  subscribtion: Subscription;
+  subscribtion: Subscription[] = [];
   loading = false;
   error = false;
   device: Devices;
@@ -35,7 +35,7 @@ export class ResultComponent implements OnInit, OnDestroy {
     matchday = !matchday ? 1 : matchday;
     this.matchDay = matchday;
     this.loading = true;
-    this.subscribtion = this.competitionService.getMatches(competitionId, matchday, null)
+    this.subscribtion.push(this.competitionService.getMatches(competitionId, matchday, null)
       .pipe(
         tap(() => this.loading = false),
         catchError(err => {
@@ -47,7 +47,7 @@ export class ResultComponent implements OnInit, OnDestroy {
       .subscribe((data: any) => {
         this.fixtures = data.matches;
         this.totalMatchDay = data.totalMatchDays;
-      });
+      }));
   }
 
   @HostListener('window:resize', ['$event'])
@@ -56,7 +56,7 @@ export class ResultComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscribtion.unsubscribe();
+    this.subscribtion.forEach(sub => sub.unsubscribe());
   }
 
 

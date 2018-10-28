@@ -5,7 +5,7 @@ import {ResultComponent} from './leagues/result/result.component';
 import {SharedModule} from '../shared/shared.module';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {MatGridListModule, MatIconModule, MatTabsModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatGridListModule, MatIconModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 import {FixtureComponent} from './fixture/fixture.component';
 import {FixtureMinComponent} from './fixture/fixture-min/fixture-min.component';
 import {TableTeamComponent} from './table-team/table-team.component';
@@ -18,6 +18,7 @@ import {MinTableComponent} from './min-table/min-table.component';
 import {CupsComponent} from './cups/cups.component';
 import {TableClComponent} from './cups/table/table.component';
 import {ResultClComponent} from './cups/result/result.component';
+import {TodayComponent} from './today/today.component';
 
 
 @NgModule({
@@ -35,18 +36,21 @@ import {ResultClComponent} from './cups/result/result.component';
     FixtureDetailsComponent,
     CupsComponent,
     TableClComponent,
-    ResultClComponent
+    ResultClComponent,
+    TodayComponent
   ],
   imports: [
     RouterModule,
     CommonModule,
     SharedModule,
     MatIconModule,
+    MatButtonModule,
     MatToolbarModule,
     MatGridListModule,
     MatTabsModule
   ],
   exports: [
+    TodayComponent
   ],
   providers: [
     CompetitionService

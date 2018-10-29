@@ -2,6 +2,8 @@
 .fixture{
   border-bottom: 1px solid mat-color($mat-gray, 300);
   font-size: 0.9em;
+  text-decoration: none;
+  color: mat-color($mat-grey, 900);
   .team{
     text-align: left;
     width: 100%;

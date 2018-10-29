@@ -32,12 +32,12 @@
 <mat-menu #menu="matMenu" [xPosition]="'after'">
   <ul>
     <li *ngFor="let cup of cupList">
-      <a  href="" mat-button  [routerLink]="['/cup/' + cup.path + '/result']" (click)="closeSidenav()" [routerLinkActive]="['mat-accent']" [routerLinkActiveOptions]="{exact: true}" >
+      <a  href="" mat-button  [href]="'/cup/' + cup.path" (click)="closeSidenav()" [routerLinkActive]="['mat-accent']" [routerLinkActiveOptions]="{exact: true}" >
         <app-icon [type]="'champions_league'"></app-icon><span>{{ cup.name }}</span>
       </a>
     </li>
     <li *ngFor="let league of leagueList">
-      <a class="menu-item" mat-button  [routerLink]="['/league/' + league.path + '/result']" (click)="closeSidenav()" [routerLinkActive]="['mat-accent']" [routerLinkActiveOptions]="{exact: true}" >
+      <a class="menu-item" mat-button  [href]="'/league/' + league.path" (click)="closeSidenav()" [routerLinkActive]="['mat-accent']" [routerLinkActiveOptions]="{exact: true}" >
         <app-icon [type]="league.country"></app-icon> <span>{{league.name}}</span>
       </a>
     </li>

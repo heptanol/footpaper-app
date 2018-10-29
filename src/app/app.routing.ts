@@ -16,12 +16,14 @@ const APP_ROUTES: Routes = [
   {path: 'news', component: NewsComponent},
   {path: 'today', component: TodayComponent},
   {path: 'league/:leaguePath', component: LeaguesComponent, children: [
+      {path: '', redirectTo: 'result', pathMatch: 'full' },
       {path: 'result', component: ResultComponent},
       {path: 'standing', component: TableComponent},
       {path: 'scorers', component: ScorersComponent}
     ]
   },
   {path: 'cup/:cupPath', component: CupsComponent, children: [
+      {path: '', redirectTo: 'result', pathMatch: 'full' },
       {path: 'result', component: ResultClComponent},
       {path: 'standing', component: TableClComponent},
     ]

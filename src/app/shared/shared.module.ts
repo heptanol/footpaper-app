@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import {FooterComponent} from './footer/footer.component';
 import {TeamSvgDefinitionsComponent} from './team-logo/svg-definitions/svg-definitions.component';
 import {TeamSvgIconComponent} from './team-logo/svg-icon/svg-icon.component';
+import {LazyLoadingDirective} from './lazy-loading/lazy-loading.directive';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {TeamSvgIconComponent} from './team-logo/svg-icon/svg-icon.component';
     MenuComponent,
     FooterComponent,
     TeamSvgDefinitionsComponent,
-    TeamSvgIconComponent
+    TeamSvgIconComponent,
+    LazyLoadingDirective
   ],
   imports: [
     MatButtonModule,
@@ -36,7 +38,8 @@ import {TeamSvgIconComponent} from './team-logo/svg-icon/svg-icon.component';
     MenuComponent,
     FooterComponent,
     TeamSvgDefinitionsComponent,
-    TeamSvgIconComponent
+    TeamSvgIconComponent,
+    LazyLoadingDirective
   ],
   providers: [
     CustomTranslateService,

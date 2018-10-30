@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import {FooterComponent} from './footer/footer.component';
 import {TeamSvgDefinitionsComponent} from './team-logo/svg-definitions/svg-definitions.component';
 import {TeamSvgIconComponent} from './team-logo/svg-icon/svg-icon.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {TeamSvgIconComponent} from './team-logo/svg-icon/svg-icon.component';
     MatToolbarModule,
     MatMenuModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    TranslateModule
   ],
   exports: [
     GroupByPipe,
@@ -36,7 +38,8 @@ import {TeamSvgIconComponent} from './team-logo/svg-icon/svg-icon.component';
     MenuComponent,
     FooterComponent,
     TeamSvgDefinitionsComponent,
-    TeamSvgIconComponent
+    TeamSvgIconComponent,
+    TranslateModule,
   ],
   providers: [
     CustomTranslateService,

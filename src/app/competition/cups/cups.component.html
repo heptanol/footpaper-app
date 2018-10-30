@@ -5,13 +5,13 @@
        [routerLink]="['./result']"
        routerLinkActive #result="routerLinkActive"
        [active]="result.isActive">
-      {{'result.label'}}
+      {{'result.label' | translate}}
     </a>
     <a mat-tab-link
        [routerLink]="['./standing']"
        routerLinkActive #standing="routerLinkActive"
        [active]="standing.isActive">
-      {{'table.label'}}
+      {{'table.label' | translate}}
     </a>
   </nav>
   <router-outlet *ngIf="competition"></router-outlet>

@@ -1,13 +1,13 @@
 
 <mat-tab-group class="mini-tab">
-  <mat-tab label="{{'result.group_stage' }}" color="accent">
+  <mat-tab label="{{'result.group_stage'  | translate}}" color="accent">
     <ng-container *ngIf="competition">
       <mat-toolbar class="match-day">
         <mat-toolbar-row>
           <button mat-icon-button (click)="getGroupStageData(competition.competition.id, matchDay - 1)"  *ngIf="matchDay !== 1">
             <mat-icon>keyboard_arrow_left</mat-icon>
           </button>
-          <span>{{'result.matchDay' }} {{matchDay}}</span>
+          <span>{{'result.matchDay'  | translate}} {{matchDay}}</span>
           <button mat-icon-button (click)="getGroupStageData(competition.competition.id, matchDay + 1)" *ngIf="matchDay !== totalMatchDay">
             <mat-icon>keyboard_arrow_right</mat-icon>
           </button>
@@ -30,7 +30,7 @@
       </div>
     </ng-container>
   </mat-tab>
-  <mat-tab label="{{'result.final_stage' }}" color="accent">
+  <mat-tab label="{{'result.final_stage'  | translate}}" color="accent">
 
     <ng-container *ngIf="competition">
       <mat-toolbar class="match-day">

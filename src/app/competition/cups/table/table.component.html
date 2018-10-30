@@ -3,15 +3,15 @@
     <mat-toolbar-row>{{groupTable.group }} </mat-toolbar-row>
   </mat-toolbar>
   <div class="table-item header">
-    <div class="tab-header position">{{'table.ranking' }}</div>
+    <div class="tab-header position">{{'table.ranking'  | translate}}</div>
     <div class="tab-header phone-no-display"></div>
-    <div class="tab-header team" >{{'table.team' }}</div>
-    <div class="tab-header">{{'table.played' }}</div>
-    <div class="tab-header phone-no-display"  >{{'table.win' }}</div>
-    <div class="tab-header phone-no-display"  >{{'table.draw' }}</div>
-    <div class="tab-header phone-no-display"  >{{'table.lost' }}</div>
-    <div class="tab-header"  >{{'table.diff' }}</div>
-    <div class="tab-header"  >{{'table.points' }}</div>
+    <div class="tab-header team" >{{'table.team'  | translate}}</div>
+    <div class="tab-header">{{'table.played'  | translate}}</div>
+    <div class="tab-header phone-no-display"  >{{'table.win'  | translate}}</div>
+    <div class="tab-header phone-no-display"  >{{'table.draw'  | translate}}</div>
+    <div class="tab-header phone-no-display"  >{{'table.lost'  | translate}}</div>
+    <div class="tab-header"  >{{'table.diff'  | translate}}</div>
+    <div class="tab-header"  >{{'table.points'  | translate}}</div>
   </div>
 
   <app-table-team *ngFor="let tab of groupTable.table; let odd=odd;" [teamTable]="tab" [class.odd]="odd"></app-table-team>

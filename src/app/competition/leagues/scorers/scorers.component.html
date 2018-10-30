@@ -1,10 +1,10 @@
 <ng-container>
   <div class="table-item header">
-    <div class="tab-header position">{{'scorers.ranking' }}</div>
-    <div class="tab-header player" >{{'scorers.player' }}</div>
-    <div class="tab-header team" >{{'scorers.team' }}</div>
-    <div class="tab-header team" >{{'scorers.nationality' }}</div>
-    <div class="tab-header"  >{{'scorers.numberOfGoals' }}</div>
+    <div class="tab-header position">{{'scorers.ranking' | translate}}</div>
+    <div class="tab-header player" >{{'scorers.player' | translate}}</div>
+    <div class="tab-header team" >{{'scorers.team' | translate}}</div>
+    <div class="tab-header team" >{{'scorers.nationality' | translate}}</div>
+    <div class="tab-header"  >{{'scorers.numberOfGoals' | translate}}</div>
   </div>
   <ng-container *ngFor="let scorer of scorers; let i = index; let odd=odd;">
     <div class="table-item" [class.odd]="odd">

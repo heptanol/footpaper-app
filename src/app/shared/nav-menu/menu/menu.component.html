@@ -7,25 +7,25 @@
   <mat-toolbar-row>
     <a mat-button href="" [routerLink]="['']" (click)="closeSidenav()" [routerLinkActive]="['mat-accent']" [routerLinkActiveOptions]="{exact: true}">
       <i class="material-icons">home</i>
-      <span>{{'menu.home' }}</span>
+      <span>{{'menu.home'  | translate}}</span>
     </a>
   </mat-toolbar-row>
   <mat-toolbar-row>
     <a mat-button href="" [routerLink]="['/news']" (click)="closeSidenav()" [routerLinkActive]="['mat-accent']" [routerLinkActiveOptions]="{exact: true}">
       <i class="material-icons">public</i>
-      <span>{{'menu.news' }}</span>
+      <span>{{'menu.news'  | translate}}</span>
     </a>
   </mat-toolbar-row>
   <mat-toolbar-row>
     <a mat-button href="" [routerLink]="['/today']" (click)="closeSidenav()" [routerLinkActive]="['mat-accent']" [routerLinkActiveOptions]="{exact: true}">
       <i class="material-icons">whatshot</i>
-      <span>{{'menu.today' }}</span>
+      <span>{{'menu.today'  | translate}}</span>
     </a>
   </mat-toolbar-row>
   <mat-toolbar-row>
     <a mat-button [matMenuTriggerFor]="menu" [routerLinkActive]="['mat-accent']" [routerLinkActiveOptions]="{exact: true}">
       <i class="material-icons">highlight</i>
-      <span>{{'menu.competition' }}</span>
+      <span>{{'menu.competition'  | translate}}</span>
     </a>
   </mat-toolbar-row>
 </mat-toolbar>

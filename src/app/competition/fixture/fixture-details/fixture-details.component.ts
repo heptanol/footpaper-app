@@ -2,9 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {catchError, tap} from 'rxjs/operators';
 import {Subscription} from 'rxjs/Subscription';
 import {ActivatedRoute} from '@angular/router';
-import {DomSanitizer} from '@angular/platform-browser';
+import {DomSanitizer, makeStateKey, TransferState} from '@angular/platform-browser';
 import {DurationType, Match, StageType, StatusType} from '../match.model';
 import {CompetitionService} from '../../competition.service';
+
+const MATCH_KEY = makeStateKey('match');
 
 @Component({
   selector: 'app-fixture-details',
@@ -13,7 +15,7 @@ import {CompetitionService} from '../../competition.service';
 })
 export class FixtureDetailsComponent implements OnInit {
 
-  fixture: Match;
+  fixture: any;
   statusType = StatusType;
   durationsTypes = DurationType;
   leagueId: string;
@@ -27,7 +29,8 @@ export class FixtureDetailsComponent implements OnInit {
   constructor(
     private competitionService: CompetitionService,
     private route: ActivatedRoute,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private state: TransferState
   ) {}
 
   ngOnInit() {
@@ -39,22 +42,17 @@ export class FixtureDetailsComponent implements OnInit {
   }
 
   getMatche(competitionId, matchId): void {
-    this.loading = true;
-    this.subscribtions.push(this.competitionService.getMatche(competitionId, matchId)
-      .pipe(
-        tap(() => this.loading = false),
-        catchError(err => {
-          this.loading = false;
-          this.error = true;
-          return err;
-        })
-      )
-      .subscribe(data => {
-        this.fixture = <Match>data;
-        if (this.fixture.status === StatusType.FINISHED) {
-          this.updateVideoUrl(this.generateMatchSearchWord());
-        }
-      }));
+    this.fixture = this.state.get(MATCH_KEY, null as any);
+    if (!this.fixture) {
+      this.subscribtions.push(this.competitionService.getMatche(competitionId, matchId)
+        .subscribe(data => {
+          this.fixture = <Match>data;
+          this.state.set(MATCH_KEY, data as any);
+          if (this.fixture.status === StatusType.FINISHED) {
+            this.updateVideoUrl(this.generateMatchSearchWord());
+          }
+        }));
+    }
   }
 
   isHomeWinner() {

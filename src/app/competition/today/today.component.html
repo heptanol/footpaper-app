@@ -1,16 +1,16 @@
 <ng-container>
-  <h2 *ngIf="!isBloc">{{'menu.today' }}</h2>
-  <h4 *ngIf="isBloc">{{'menu.today' }}</h4>
+  <h2 *ngIf="!isBloc">{{'menu.today' | translate}}</h2>
+  <h4 *ngIf="isBloc">{{'menu.today' | translate}}</h4>
   <mat-toolbar *ngIf="!isBloc">
     <mat-toolbar-row class="head">
-      <span>{{'today' }}</span>
+      <span>{{'today' | translate}}</span>
     </mat-toolbar-row>
   </mat-toolbar>
   <div *ngIf="fixtures && fixtures.length > 0" role="list">
     <div *ngFor="let fixture of fixtures |  groupBy:'competitionName'" role="listitem" class="border mt-3 mb-3">
       <mat-toolbar class="day">
         <mat-toolbar-row>
-          {{fixture.key }}
+          {{fixture.key | translate}}
         </mat-toolbar-row>
       </mat-toolbar>
       <ng-container *ngIf="!isBloc &&  device === deviceList.DESKTOP">
@@ -22,6 +22,6 @@
     </div>
   </div>
   <div *ngIf="fixtures && fixtures.length === 0">
-    {{'no_matches'}}
+    {{'no_matches' | translate}}
   </div>
 </ng-container>

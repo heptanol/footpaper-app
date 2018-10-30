@@ -1,8 +1,8 @@
 <div class="mdc-layout-grid" [class.no-padding]="isBloc">
   <div class="mdc-layout-grid__inner"  *ngIf="news">
     <div class="mdc-layout-grid__cell--span-12">
-      <h2 *ngIf="!isBloc">{{'menu.news'}}</h2>
-      <h3 *ngIf="isBloc">{{'menu.news'}}</h3>
+      <h2 *ngIf="!isBloc">{{'menu.news' | translate}}</h2>
+      <h3 *ngIf="isBloc">{{'menu.news' | translate}}</h3>
     </div>
     <ng-container *ngFor="let n of news |  orderBy:'pubDate':'DESC';  let i=index">
       <div class="mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone"
@@ -12,7 +12,7 @@
         <app-news-item [feed]="n"></app-news-item>
       </div>
     </ng-container>
-    <button class="mdc-layout-grid__cell--span-12" *ngIf="isBloc" mat-stroked-button href="" [routerLink]="['/news']">{{'more'}}</button>
+    <button class="mdc-layout-grid__cell--span-12" *ngIf="isBloc" mat-stroked-button href="" [routerLink]="['/news']">{{'more' | translate}}</button>
   </div>
 </div>
 

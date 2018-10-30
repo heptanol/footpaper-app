@@ -1,6 +1,7 @@
 import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {Devices} from './shared/responsive/responsive.model';
 import {ResponsiveService} from './shared/responsive/responsive.service';
+import {CustomTranslateService} from './shared/translate/translate.service';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,11 @@ export class AppComponent implements OnInit, OnDestroy {
   device: Devices;
   deviceList = Devices;
   constructor(
-    private responsiveService: ResponsiveService
-  ) {}
+    private responsiveService: ResponsiveService,
+    private translateService: CustomTranslateService,
+  ) {
+    this.translateService.setLangue();
+  }
 
   ngOnInit() {
     this.device = this.responsiveService.detectDevice();

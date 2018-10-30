@@ -40,11 +40,11 @@
       <div class="status" *ngIf="fixture.status === statusType.SCHEDULED">{{fixture.utcDate | date: 'HH:mm'}}</div>
       <div class="status in-play" *ngIf="fixture.status === statusType.IN_PLAY">{{fixture.diff}}'</div>
       <div class="status in-play" *ngIf="fixture.status === statusType.LIVE">{{fixture.diff}}'</div>
-      <div class="status rep" *ngIf="fixture.status === statusType.POSTPONED">{{'match.status.POSTPONED' }}</div>
-      <div class="status rep" *ngIf="fixture.status === statusType.CANCELED">{{'match.status.CANCELED' }}</div>
-      <div class="status rep" *ngIf="fixture.status === statusType.SUSPENDED">{{'match.status.SUSPENDED' }}</div>
-      <div class="status in-play" *ngIf="fixture.status === statusType.PAUSED">{{'match.status.PAUSED' }}</div>
-      <div class="status finished" *ngIf="fixture.status === statusType.FINISHED">{{'match.status.FINISHED' }}</div>
+      <div class="status rep" *ngIf="fixture.status === statusType.POSTPONED">{{'match.status.POSTPONED' | translate}}</div>
+      <div class="status rep" *ngIf="fixture.status === statusType.CANCELED">{{'match.status.CANCELED' | translate}}</div>
+      <div class="status rep" *ngIf="fixture.status === statusType.SUSPENDED">{{'match.status.SUSPENDED' | translate}}</div>
+      <div class="status in-play" *ngIf="fixture.status === statusType.PAUSED">{{'match.status.PAUSED' | translate}}</div>
+      <div class="status finished" *ngIf="fixture.status === statusType.FINISHED">{{'match.status.FINISHED' | translate}}</div>
     </div>
     <div class="date">{{fixture.utcDate | date: 'dd/MM/yyyy HH:mm'}}</div>
   </div>
@@ -54,7 +54,7 @@
         <div class="mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-12-tablet mdc-layout-grid__cell--span-12-phone">
 
           <mat-tab-group class="mini-tab">
-            <mat-tab label="{{'match.linups' }}" color="accent">
+            <mat-tab label="{{'match.linups' | translate}}" color="accent">
               <div class="lineups-content">
                 <div class="home-lineups">
                   <div class="lineup">
@@ -101,7 +101,7 @@
               </div>
             </mat-tab>
 
-            <mat-tab label="{{'match.details' }}" color="accent">
+            <mat-tab label="{{'match.details' | translate}}" color="accent">
               <div class="details-content">
                 <div class="home-details">
                   <div class="details">
@@ -175,7 +175,7 @@
               </div>
             </mat-tab>
 
-            <mat-tab label="{{'video' }}" color="accent" *ngIf="showVideo">
+            <mat-tab label="{{'video' | translate}}" color="accent" *ngIf="showVideo">
               <iframe id="ytplayer" type="text/html" width="100%" height="400"
                       [src]="videoUrl"
                       frameborder="0">

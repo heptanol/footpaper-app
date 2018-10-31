@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {catchError, tap} from 'rxjs/operators';
 import {Subscription} from 'rxjs/Subscription';
 import {ActivatedRoute} from '@angular/router';
 import {DomSanitizer, makeStateKey, TransferState} from '@angular/platform-browser';
 import {DurationType, Match, StageType, StatusType} from '../match.model';
 import {CompetitionService} from '../../competition.service';
+import {HeaderService} from '../../../shared/header/header.service';
 
 const MATCH_KEY = makeStateKey('match');
 
@@ -20,8 +20,6 @@ export class FixtureDetailsComponent implements OnInit {
   durationsTypes = DurationType;
   leagueId: string;
   subscribtions: Subscription[] = [];
-  loading = false;
-  error = false;
   StageType = StageType;
   videoUrl: any;
   showVideo = false;
@@ -30,7 +28,8 @@ export class FixtureDetailsComponent implements OnInit {
     private competitionService: CompetitionService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private state: TransferState
+    private state: TransferState,
+    private headerService: HeaderService
   ) {}
 
   ngOnInit() {
@@ -38,6 +37,8 @@ export class FixtureDetailsComponent implements OnInit {
       this.leagueId = param.leaguePath;
       const matchId =  param.matchId;
       this.getMatche(this.leagueId, matchId);
+      this.updateVideoUrl(this.generateMatchSearchWord());
+      this.setSocialMediaData();
     }));
   }
 
@@ -48,9 +49,6 @@ export class FixtureDetailsComponent implements OnInit {
         .subscribe(data => {
           this.fixture = <Match>data;
           this.state.set(MATCH_KEY, data as any);
-          if (this.fixture.status === StatusType.FINISHED) {
-            this.updateVideoUrl(this.generateMatchSearchWord());
-          }
         }));
     }
   }
@@ -75,13 +73,15 @@ export class FixtureDetailsComponent implements OnInit {
     }
   }
 
-  // setSocialMediaData() {
-  //   const title = this.fixture.homeTeam.name + ' VS ' + this.fixture.awayTeam.name;
-  //   const descrb = this.fixture.homeTeam.name + ' VS ' + this.fixture.awayTeam.name
-  //   + ', ' + new Date(this.fixture.utcDate).toDateString();
-  //   this.headerService.setShareTitle(title);
-  //   this.headerService.setShareDescription(descrb);
-  // }
+  setSocialMediaData() {
+    if (this.fixture) {
+      const title = this.generateMatchSearchWord();
+      const descrb = this.generateMatchSearchWord() + '  ' + new Date(this.fixture.utcDate).toDateString();
+      this.headerService.setSubTitle(title);
+      this.headerService.setShareTitle(title);
+      this.headerService.setShareDescription(descrb);
+    }
+  }
 
   generateMatchSearchWord(): string {
     return this.fixture.homeTeam.name + ' ' +
@@ -90,12 +90,10 @@ export class FixtureDetailsComponent implements OnInit {
   }
 
   updateVideoUrl(query: string) {
-    // Appending an ID to a YouTube URL is safe.
-    // Always make sure to construct SafeValue objects as
-    // close as possible to the input data so
-    // that it's easier to check if the value is safe.
-    const dangerousVideoUrl = 'https://www.youtube.com/embed?listType=search&list=' + query;
-    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
-    this.showVideo = true;
+    if (this.fixture && this.fixture.status === StatusType.FINISHED) {
+      const dangerousVideoUrl = 'https://www.youtube.com/embed?listType=search&list=' + query;
+      this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
+      this.showVideo = true;
+    }
   }
 }

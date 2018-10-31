@@ -2,6 +2,7 @@ import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {Devices} from './shared/responsive/responsive.model';
 import {ResponsiveService} from './shared/responsive/responsive.service';
 import {CustomTranslateService} from './shared/translate/translate.service';
+import {HeaderService} from './shared/header/header.service';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,11 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private responsiveService: ResponsiveService,
     private translateService: CustomTranslateService,
+    private header: HeaderService
   ) {
-    this.translateService.setLangue();
+    translateService.setLangue();
+    header.setTitle();
+    header.setMeta();
   }
 
   ngOnInit() {

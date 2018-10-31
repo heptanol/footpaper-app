@@ -1,9 +1,11 @@
 import {Component, HostListener, Input, OnChanges, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
-import {catchError, tap} from 'rxjs/operators';
+import {catchError, take, tap} from 'rxjs/operators';
 import {Devices} from '../../shared/responsive/responsive.model';
 import {CompetitionService} from '../competition.service';
 import {ResponsiveService} from '../../shared/responsive/responsive.service';
+import {HeaderService} from '../../shared/header/header.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-today',
@@ -21,9 +23,15 @@ export class TodayComponent implements OnInit, OnDestroy, OnChanges {
   constructor(
     private competitionService: CompetitionService,
     private responsiveService: ResponsiveService,
+    private headerService: HeaderService,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit() {
+    if (!this.isBloc) {
+      this.translateService.get('menu.today').pipe(take(1))
+        .subscribe(value => this.headerService.setSubTitle(value));
+    }
     this.device = this.responsiveService.detectDevice();
     this.getData();
   }

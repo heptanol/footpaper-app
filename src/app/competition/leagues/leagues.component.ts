@@ -4,6 +4,7 @@ import {Subscription} from 'rxjs/Subscription';
 import {catchError} from 'rxjs/operators';
 import {Leagues} from '../../shared/nav-menu/menu.model';
 import {CompetitionService} from '../competition.service';
+import {HeaderService} from '../../shared/header/header.service';
 
 @Component({
   selector: 'app-leagues',
@@ -18,7 +19,8 @@ export class LeaguesComponent implements OnInit, OnDestroy {
   error = false;
   constructor(
     private competitionService: CompetitionService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private headerService: HeaderService,
   ) { }
 
   ngOnInit() {
@@ -43,6 +45,9 @@ export class LeaguesComponent implements OnInit, OnDestroy {
     this.subscribtions.push(this.route.params.subscribe(param => {
       const comp = Object.values(this.leagues).find((val) => val.path === param.leaguePath);
       this.getCompetition(comp.id);
+      if (this.competition) {
+        this.headerService.setSubTitle(this.competition.competition.name);
+      }
     }));
   }
 

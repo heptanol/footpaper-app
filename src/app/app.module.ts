@@ -26,8 +26,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'footpaper-app' }),
-    NewsModule,
     SharedModule,
+    NewsModule,
     Routing,
     BrowserAnimationsModule,
     BrowserTransferStateModule,

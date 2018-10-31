@@ -1,9 +1,9 @@
 @import '~@angular/material/theming';
 .footer{
   min-height: 80px;
-  background: mat-color($mat-grey, 300);
+  background: mat-color($mat-grey, 800);
   margin-top: 100px;
-  border-top: 1px solid mat-color($mat-gray, 400);
+  color: mat-color($mat-gray, 300);
 }
 .logo{
   text-align: center;

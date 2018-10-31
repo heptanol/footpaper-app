@@ -9,7 +9,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatGridListModule, MatSidenavModule} from '@angular/material';
+import {MatButtonModule, MatGridListModule, MatSidenavModule} from '@angular/material';
 import {CommonModule} from '@angular/common';
 import {SharedModule} from './shared/shared.module';
 import {HomeComponent} from './home/home.component';
@@ -36,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     MatSidenavModule,
     MatGridListModule,
+    MatButtonModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -4,15 +4,15 @@ import { GroupByPipe } from './pipe/group-by';
 import { CustomTranslateService } from './translate/translate.service';
 import { ResponsiveService } from './responsive/responsive.service';
 import { IconComponent } from './nav-menu/icon/icon.component';
-import {MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from './nav-menu/menu/menu.component';
 import { RouterModule } from '@angular/router';
-import {FooterComponent} from './footer/footer.component';
-import {TeamSvgDefinitionsComponent} from './team-logo/svg-definitions/svg-definitions.component';
-import {TeamSvgIconComponent} from './team-logo/svg-icon/svg-icon.component';
-import {TranslateModule} from '@ngx-translate/core';
-import {HeaderService} from './header/header.service';
+import { FooterComponent } from './footer/footer.component';
+import { TeamSvgDefinitionsComponent } from './team-logo/svg-definitions/svg-definitions.component';
+import { TeamSvgIconComponent } from './team-logo/svg-icon/svg-icon.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { HeaderService } from './header/header.service';
 
 
 @NgModule({
@@ -46,7 +46,7 @@ import {HeaderService} from './header/header.service';
   providers: [
     CustomTranslateService,
     ResponsiveService,
-    HeaderService
+    HeaderService,
   ],
 })
 export class SharedModule { }

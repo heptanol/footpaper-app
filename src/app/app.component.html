@@ -1,15 +1,16 @@
 <mat-sidenav-container class="example-container">
-  <mat-sidenav [mode]="getSideNavMode()" #sidenav [fixedInViewport]="true" [fixedTopGap]="0" [fixedBottomGap]="0" [opened]="device === deviceList.DESKTOP">
-    <app-nav-menu *ngIf="device !== deviceList.DESKTOP" (navClose)="sidenav.close()"></app-nav-menu>
+  <mat-sidenav [mode]="'side'" #sidenav [fixedInViewport]="true" [fixedTopGap]="0" [fixedBottomGap]="0" [opened]="'true'">
     <app-nav-menu *ngIf="device === deviceList.DESKTOP"></app-nav-menu>
+    <app-nav-menu *ngIf="device !== deviceList.DESKTOP" (navClose)="sidenav.close()"></app-nav-menu>
   </mat-sidenav>
   <mat-sidenav-content>
     <button *ngIf="device !== deviceList.DESKTOP" mat-button (click)="sidenav.toggle()"><i class="material-icons">menu</i></button>
-    <div class="container">
-      <router-outlet></router-outlet>
+    <div class="main">
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
     </div>
     <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
 <app-team-svg-definitions></app-team-svg-definitions>
-

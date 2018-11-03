@@ -40,7 +40,6 @@ export class FixtureDetailsComponent implements OnInit {
       this.getMatche(this.leagueId, matchId);
       if (this.fixture) {
         this.updateVideoUrl(this.generateMatchSearchWord());
-        this.setSocialMediaData();
       }
     }));
   }

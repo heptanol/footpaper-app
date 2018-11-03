@@ -19,8 +19,6 @@ import {CupsComponent} from './cups/cups.component';
 import {TableClComponent} from './cups/table/table.component';
 import {ResultClComponent} from './cups/result/result.component';
 import {TodayComponent} from './today/today.component';
-import {ShareModule} from '@ngx-share/core';
-import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,9 +46,7 @@ import {HttpClientModule} from '@angular/common/http';
     MatButtonModule,
     MatToolbarModule,
     MatGridListModule,
-    MatTabsModule,
-    HttpClientModule,
-    ShareModule.forRoot()
+    MatTabsModule
   ],
   exports: [
     TodayComponent

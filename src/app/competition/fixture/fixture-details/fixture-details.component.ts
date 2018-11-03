@@ -30,8 +30,7 @@ export class FixtureDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
     private state: TransferState,
-    private headerService: HeaderService,
-    public share: ShareButtons
+    private headerService: HeaderService
   ) {}
 
   ngOnInit() {

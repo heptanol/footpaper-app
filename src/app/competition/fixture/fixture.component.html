@@ -1,4 +1,4 @@
-<a [href]="href" class="fixture" *ngIf="fixture">
+<a class="fixture" *ngIf="fixture">
   <div class="team home"  [class.winner]="isHomeWinner()">{{fixture.homeTeam.name}}</div>
   <div class="logo home"><app-team-svg-icon [id]="fixture.homeTeam.id"></app-team-svg-icon></div>
   <div class="result">

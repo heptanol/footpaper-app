@@ -5,7 +5,6 @@ import {DomSanitizer, makeStateKey, TransferState} from '@angular/platform-brows
 import {DurationType, Match, StageType, StatusType} from '../match.model';
 import {CompetitionService} from '../../competition.service';
 import {HeaderService} from '../../../shared/header/header.service';
-import {ShareButtons} from '@ngx-share/core';
 
 const MATCH_KEY = makeStateKey('match');
 

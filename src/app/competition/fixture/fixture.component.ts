@@ -1,4 +1,4 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input} from '@angular/core';
 import {Router} from '@angular/router';
 import {DurationType, Match, StatusType} from './match.model';
 
@@ -7,13 +7,20 @@ import {DurationType, Match, StatusType} from './match.model';
   templateUrl: './fixture.component.html',
   styleUrls: ['./fixture.component.scss']
 })
-export class FixtureComponent implements OnInit {
+export class FixtureComponent {
 
   @Input() fixture: Match;
   @Input() competition: any;
   statusType = StatusType;
   durationsTypes = DurationType;
-  href: string;
+  constructor(
+    private router: Router
+  ) { }
+
+  @HostListener('click')
+  onClick() {
+    this.router.navigate(['match/' + this.competition.id + '/' + this.fixture.id]);
+  }
 
   isHomeWinner() {
     if (this.fixture.score.fullTime.homeTeam > this.fixture.score.fullTime.awayTeam) {
@@ -33,10 +40,6 @@ export class FixtureComponent implements OnInit {
     } else if (this.fixture.score.penalties.homeTeam < this.fixture.score.penalties.awayTeam) {
       return true;
     }
-  }
-
-  ngOnInit(): void {
-    this.href = 'match/' + this.competition.id + '/' + this.fixture.id;
   }
 
 }

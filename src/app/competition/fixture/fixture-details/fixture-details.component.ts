@@ -5,6 +5,7 @@ import {DomSanitizer, makeStateKey, TransferState} from '@angular/platform-brows
 import {DurationType, Match, StageType, StatusType} from '../match.model';
 import {CompetitionService} from '../../competition.service';
 import {HeaderService} from '../../../shared/header/header.service';
+import {ShareButtons} from '@ngx-share/core';
 
 const MATCH_KEY = makeStateKey('match');
 
@@ -29,7 +30,8 @@ export class FixtureDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
     private state: TransferState,
-    private headerService: HeaderService
+    private headerService: HeaderService,
+    public share: ShareButtons
   ) {}
 
   ngOnInit() {
@@ -37,8 +39,10 @@ export class FixtureDetailsComponent implements OnInit {
       this.leagueId = param.leaguePath;
       const matchId =  param.matchId;
       this.getMatche(this.leagueId, matchId);
-      this.updateVideoUrl(this.generateMatchSearchWord());
-      this.setSocialMediaData();
+      if (this.fixture) {
+        this.updateVideoUrl(this.generateMatchSearchWord());
+        this.setSocialMediaData();
+      }
     }));
   }
 
